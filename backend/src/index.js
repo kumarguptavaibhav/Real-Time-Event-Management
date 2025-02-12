@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5000;
 
 connectDB().catch((err) => {
   console.error("Database connection failed:", err.message);
-  process.exit(1); // Exit process if DB fails
+  process.exit(1);
 });
 
 const server = http.createServer(app);
