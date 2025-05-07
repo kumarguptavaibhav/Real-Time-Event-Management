@@ -26,6 +26,7 @@ import {
 import moment from "moment";
 import socket from "../socket.js";
 import toast from "react-hot-toast";
+import ModalView from "../Components/ModalView.jsx";
 
 function Dashboard() {
   const user_data = user();
@@ -39,6 +40,8 @@ function Dashboard() {
   const [joinloadingStates, setJoinLoadingStates] = useState({});
   const [cancelloadingStates, setCancelLoadingStates] = useState({});
   const [updateloadingStates, setUpdateLoadingStates] = useState({});
+  const [modalView, setModalView] = useState(true);
+  const [modalData, setModalData] = useState(null);
   useEffect(() => {
     if (!isLoading && data?.response) {
       const transformed_data = data?.response.map((data) => {
@@ -186,6 +189,16 @@ function Dashboard() {
     }
   };
 
+  const handleModalClose = () => {
+    setModalView(false);
+    setModalData(null);
+  }
+  const handleModalOpen = (id) => {
+    const modalData = rows.filter((row) => row.id === id);
+    setModalData(modalData);
+    setModalView(true);
+  }
+ 
   const columns = useMemo(
     () => [
       {
@@ -354,6 +367,15 @@ function Dashboard() {
                       "Join"
                     )}
                   </Button>,
+                  <Button
+                  key="view"
+                  variant="contained"
+                  size="small"
+                  onClick={() => handleModalOpen(id)}
+                  // disabled={!token} // Disable if token is null
+                >
+                  View
+                </Button>,
                 ];
               },
             },
@@ -485,6 +507,7 @@ function Dashboard() {
           />
         </Box>
       </Box>
+      <ModalView data={modalData} modalView={modalView} handleModalClose={handleModalClose}/>
     </Box>
   );
 }

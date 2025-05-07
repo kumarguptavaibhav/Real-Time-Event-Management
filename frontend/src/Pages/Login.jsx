@@ -40,7 +40,7 @@ const Login = () => {
   };
 
   return (
-    <Box sx={{ width: "100vw", height: "100vh", backgroundColor: "#03045e" }}>
+    <Box sx={{ width: "100vw", height: "100vh", backgroundColor: "#03045e", display: 'flex', alignItems: 'center' }}>
       <Box
         sx={{
           width: "20rem",

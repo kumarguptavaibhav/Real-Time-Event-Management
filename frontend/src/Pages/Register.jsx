@@ -29,7 +29,7 @@ const Register = () => {
     }
   };
   return (
-    <Box sx={{ width: "100vw", backgroundColor: "#03045e", height: '100vh' }}>
+    <Box sx={{ width: "100vw", backgroundColor: "#03045e", height: '100vh', display: 'flex', alignItems: 'center' }}>
       <Box
         sx={{
           width: "20rem",
