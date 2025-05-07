@@ -40,7 +40,7 @@ function Dashboard() {
   const [joinloadingStates, setJoinLoadingStates] = useState({});
   const [cancelloadingStates, setCancelLoadingStates] = useState({});
   const [updateloadingStates, setUpdateLoadingStates] = useState({});
-  const [modalView, setModalView] = useState(true);
+  const [modalView, setModalView] = useState(false);
   const [modalData, setModalData] = useState(null);
   useEffect(() => {
     if (!isLoading && data?.response) {
