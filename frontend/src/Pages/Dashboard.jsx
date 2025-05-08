@@ -194,6 +194,8 @@ function Dashboard() {
     setModalData(null);
   }
   const handleModalOpen = (id) => {
+    console.log({rows});
+    console.log({id});
     const modalData = rows.filter((row) => row.id === id);
     console.log("function", modalData);
     setModalData(modalData);
