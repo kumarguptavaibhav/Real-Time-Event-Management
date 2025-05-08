@@ -306,6 +306,7 @@ function Dashboard() {
               width: 200,
               cellClassName: "actions",
               getActions: ({ id }) => {
+                console.log(id);
                 const isInEditMode =
                   rowModesModel[id]?.mode === GridRowModes.Edit;
                 if (isInEditMode) {
@@ -375,7 +376,6 @@ function Dashboard() {
                   variant="contained"
                   size="small"
                   onClick={(id) => handleModalOpen(id)}
-                  // disabled={!token} // Disable if token is null
                 >
                   View
                 </Button>,
