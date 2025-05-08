@@ -195,6 +195,7 @@ function Dashboard() {
   }
   const handleModalOpen = (id) => {
     const modalData = rows.filter((row) => row.id === id);
+    console.log("function", modalData);
     setModalData(modalData);
     setModalView(true);
   }
@@ -371,7 +372,7 @@ function Dashboard() {
                   key="view"
                   variant="contained"
                   size="small"
-                  onClick={() => handleModalOpen(id)}
+                  onClick={(id) => handleModalOpen(id)}
                   // disabled={!token} // Disable if token is null
                 >
                   View

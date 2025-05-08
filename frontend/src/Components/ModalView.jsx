@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
 function ModalView({ data, modalView, handleModalClose }) {
+  console.log("component", data);
   return (
     <Modal
       open={modalView}
